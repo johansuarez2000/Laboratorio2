@@ -15,10 +15,9 @@ public class Promotor extends Persona {
     private String nombreProyecto;
     private Prestamo prestamo;
 
-    public Promotor(String nombreProyecto, Prestamo prestamo, String nombre, int id, String usuario, String contraseña) {
+    public Promotor(String nombre, int id, String usuario, String contraseña) {
         super(nombre, id, usuario, contraseña);
-        this.nombreProyecto = nombreProyecto;
-        this.prestamo = prestamo;
+        
     }
 
     
@@ -38,6 +37,19 @@ public class Promotor extends Persona {
     public void PedirPrestamo(Prestamo prestamo) {
         this.prestamo = prestamo;
     }
+
+
+    
+ 
+
+    @Override
+    public String Datos() {
+    
+    return "Persona{" + "nombre=" + getNombre() + ", id=" + getId() + ", usuario=" + getUsuario() + ", contrase\u00f1a=" + getContraseña() +"Promotor{" + "nombreProyecto=" + nombreProyecto + ", prestamo=" + prestamo + '}';
+    }
+    
+
+    
     
     
     

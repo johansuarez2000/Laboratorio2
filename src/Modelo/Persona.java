@@ -55,6 +55,8 @@ public abstract class Persona {
     public void setId(int id) {
         this.id = id;
     }
+
     
+    public abstract String Datos();    
     
 }

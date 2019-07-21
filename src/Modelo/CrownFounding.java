@@ -34,6 +34,14 @@ public class CrownFounding extends Persona {
     public void setAportantes(ArrayList<Aportante> aportantes) {
         this.aportantes = aportantes;
     }
-    
+
+ 
+
+    @Override
+    public String Datos() {
+       return "Persona{" + "nombre=" + getNombre() + ", id=" + getId() + ", usuario=" + getUsuario() + ", contrase\u00f1a=" + getContraseña()+"CrownFounding{" + "promotores=" + promotores + ", aportantes=" + aportantes + '}';
+    }
+     
+  
     
 }

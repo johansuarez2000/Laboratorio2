@@ -28,6 +28,12 @@ public class Aportante extends Persona {
     public void setCapitalTotal(int capitalTotal) {
         this.capitalTotal = capitalTotal;
     }
+
+
+    @Override
+    public String Datos() {
+        return "Persona{" + "nombre=" + getNombre() + ", id=" + getId() + ", usuario=" + getUsuario() + ", contrase\u00f1a=" + getContraseña()+ "Aportante{" + "capitalTotal=" + capitalTotal + '}';
+    }
     
     
     
