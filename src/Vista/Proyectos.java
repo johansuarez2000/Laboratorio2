@@ -18,11 +18,11 @@ import javafx.stage.Stage;
  *
  * @author Usuario
  */
-public class Proyectos extends Application{
+public class Proyectos implements Vista{
     private Scene escena;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    
+    public Proyectos() throws Exception {
     Label lb1= new Label("Nombre del Proyecto");
     Label lb2= new Label("Valor Base                  ");
     Label lb3= new Label("Valor Minimo             ");
@@ -45,13 +45,21 @@ public class Proyectos extends Application{
     vb1.getChildren().add(hb3);
     vb1.getChildren().add(b1);
     this.escena= new Scene(vb1,500,500);
-        primaryStage.setScene(escena);
-        primaryStage.show();
-       
+        
     }
-    public static void main(String[] args) {
-Application.launch(args);
+
+    @Override
+    public Scene getScene() {
+        return escena;
+    }
+
+    public Scene getEscena() {
+        return escena;
+    }
+
+    public void setEscena(Scene escena) {
+        this.escena = escena;
+    }
     
 }
-    }
 

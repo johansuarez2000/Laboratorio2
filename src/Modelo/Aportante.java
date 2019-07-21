@@ -28,7 +28,7 @@ public class Aportante extends Persona {
     public void setCapitalTotal(int capitalTotal) {
         this.capitalTotal = capitalTotal;
     }
-
+    
     
     
 }

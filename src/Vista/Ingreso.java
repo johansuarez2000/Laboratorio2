@@ -22,15 +22,15 @@ import javafx.stage.Stage;
  *
  * @author Usuario
  */
-public class Ingreso extends Application {
+public class Ingreso implements Vista{
     private Scene escena;  
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+ 
+    public Ingreso() throws Exception {
         Label lb1= new Label("Usuario");
         TextField usuario= new TextField();
         Label lb2= new Label("Contraseña");
         PasswordField contraseña= new PasswordField();
-        primaryStage.setTitle("Ingrese a la app");
+      
         HBox hb1= new HBox();
         HBox hb2= new HBox();
         HBox hb3= new HBox();
@@ -47,12 +47,20 @@ public class Ingreso extends Application {
         hb3.getChildren().add(h1);
         vb1.getChildren().add(hb3);
         this.escena= new Scene(vb1,500,500);
-        primaryStage.setScene(escena);
-        primaryStage.show();
        
-    }
-    public static void main(String[] args) {
-Application.launch(args);
-    
 }
+
+    @Override
+    public Scene getScene() {
+       return escena;
+    }
+
+    public Scene getEscena() {
+        return escena;
+    }
+
+    public void setEscena(Scene escena) {
+        this.escena = escena;
+    }
+    
 }

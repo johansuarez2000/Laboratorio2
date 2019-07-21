@@ -1,17 +1,21 @@
 package Vista;
 
 
+import java.io.FileInputStream;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -26,10 +30,10 @@ import javafx.stage.Stage;
  *
  * @author Usuario
  */
-public class Registro extends Application{
+public class Registro implements Vista {
     private Scene escena;
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    
+    public Registro() throws Exception {
       Label lb1= new Label("Nombre                      ");
       TextField h1= new TextField();
       Label lb2= new Label("Id                                ");
@@ -44,21 +48,28 @@ public class Registro extends Application{
       TextField h4= new TextField();
       Label lb7= new Label("Contraseña de acceso");
       TextField h5= new TextField();
-      Button b1= new Button("Guardar");
+      Button b1= new Button("Siguiente");
+      Label lb8= new Label("Rol                              ");
+      TextField h6= new TextField();
+      FileInputStream dinero= new FileInputStream("ahorrar-dinero (1).png");
+      Image imagen= new Image(dinero);
+      Label lb9= new Label("Si su rol es Aportante escriba su capital total",new ImageView(imagen));
+      TextField h7= new TextField();
       HBox hb1 = new HBox();
       HBox hb2 = new HBox();
       HBox hb3 = new HBox();
       HBox hb4 = new HBox();
       HBox hb5 = new HBox();
+      HBox hb9 = new HBox();
       VBox vb1= new VBox();
       HBox hb6= new HBox();
       HBox hb7= new HBox();
-      ObservableList names =FXCollections.observableArrayList();
-      names.add("CrownFounder");
-      names.add("Aportante");
-      names.add("Promotor");
-      ChoiceBox cb = new ChoiceBox(names);
-      vb1.getChildren().add(cb);
+      HBox hb8 = new HBox();
+      hb9.getChildren().add(lb9);
+      hb9.getChildren().add(h7);
+      hb8.getChildren().add(lb8);
+      hb8.getChildren().add(h6);
+      vb1.getChildren().add(hb8);
       hb1.getChildren().add(lb1);
       hb1.getChildren().add(h1);
       hb2.getChildren().add(lb2);
@@ -74,22 +85,23 @@ public class Registro extends Application{
       vb1.getChildren().add(hb3);
       vb1.getChildren().add(hb4);
       vb1.getChildren().add(hb5);   
+      vb1.getChildren().add(hb9); 
       vb1.getChildren().add(b1);
-      cb.setOnAction(e -> System.out.println("Action Nueva Selección: " + cb.getValue()));
-      /*cb.valueProperty().addListener((ov, p1, p2) -> {
-    System.out.println("Nueva Selección: " + p2);
-    System.out.println("Vieja Selección: " + p1);
-});*/
-       
-      this.escena= new Scene(vb1,500,500);
-      primaryStage.setScene(escena);
-      primaryStage.show();
-      
-    }
-    public static void main(String[] args) {
-Application.launch(args);
-    
+      this.escena= new Scene(vb1, 500, 500);
 }
+
+    public Scene getEscena() {
+        return escena;
+    }
+
+    public void setEscena(Scene escena) {
+        this.escena = escena;
+    }
+
+    @Override
+    public Scene getScene() {
+      return escena;
+    }
    
     
 }
