@@ -20,16 +20,18 @@ import javafx.stage.Stage;
  */
 public class Proyectos implements Vista{
     private Scene escena;
-
-    
-    public Proyectos() throws Exception {
+    Button b1;
+    TextField nombrep;
+    TextField vb;
+    TextField vm;
+    public Proyectos() {
     Label lb1= new Label("Nombre del Proyecto");
     Label lb2= new Label("Valor Base                  ");
     Label lb3= new Label("Valor Minimo             ");
-    Button b1= new Button("Guardar");
-    TextField nombrep= new TextField();
-    TextField vb= new TextField();
-    TextField vm= new TextField();
+    b1= new Button("Guardar");
+    nombrep= new TextField();
+     vb= new TextField();
+    vm= new TextField();
     HBox hb1= new HBox();
     HBox hb2= new HBox();
     HBox hb3= new HBox();
@@ -60,6 +62,39 @@ public class Proyectos implements Vista{
     public void setEscena(Scene escena) {
         this.escena = escena;
     }
+
+    public Button getB1() {
+        return b1;
+    }
+
+    public void setB1(Button b1) {
+        this.b1 = b1;
+    }
+
+    public TextField getNombrep() {
+        return nombrep;
+    }
+
+    public void setNombrep(TextField nombrep) {
+        this.nombrep = nombrep;
+    }
+
+    public TextField getVb() {
+        return vb;
+    }
+
+    public void setVb(TextField vb) {
+        this.vb = vb;
+    }
+
+    public TextField getVm() {
+        return vm;
+    }
+
+    public void setVm(TextField vm) {
+        this.vm = vm;
+    }
+    
     
 }
 

@@ -24,19 +24,22 @@ import javafx.stage.Stage;
  */
 public class Ingreso implements Vista{
     private Scene escena;  
- 
-    public Ingreso() throws Exception {
+    Button b1;
+    Hyperlink h1;
+    TextField usuario;
+    PasswordField contraseña;
+    public Ingreso(){
         Label lb1= new Label("Usuario");
-        TextField usuario= new TextField();
+        usuario= new TextField();
         Label lb2= new Label("Contraseña");
-        PasswordField contraseña= new PasswordField();
+        contraseña= new PasswordField();
       
         HBox hb1= new HBox();
         HBox hb2= new HBox();
         HBox hb3= new HBox();
         VBox vb1= new VBox();
-        Button b1= new Button("Ingresar");
-        Hyperlink h1= new Hyperlink("Registrese");
+        b1= new Button("Ingresar");
+        h1= new Hyperlink("Registrese");
         hb1.getChildren().add(lb1);
         hb1.getChildren().add(usuario);
         hb2.getChildren().add(lb2);
@@ -61,6 +64,38 @@ public class Ingreso implements Vista{
 
     public void setEscena(Scene escena) {
         this.escena = escena;
+    }
+
+    public Button getB1() {
+        return b1;
+    }
+
+    public void setB1(Button b1) {
+        this.b1 = b1;
+    }
+
+    public Hyperlink getH1() {
+        return h1;
+    }
+
+    public void setH1(Hyperlink h1) {
+        this.h1 = h1;
+    }
+
+    public TextField getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(TextField usuario) {
+        this.usuario = usuario;
+    }
+
+    public PasswordField getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(PasswordField contraseña) {
+        this.contraseña = contraseña;
     }
     
 }

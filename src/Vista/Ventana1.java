@@ -1,10 +1,12 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Vista;
-
-
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,30 +17,22 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-
-
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
  * @author Usuario
  */
-public class ventana implements Vista {
+public class Ventana1 implements Vista {
     private Scene escena;
     Label lb1;
     Label lb2;
     Label lb3;
     Label lb4;
     Label lb5;
-    
-    public ventana( ) throws FileNotFoundException{
+    TextField h1;
+    TextField h2;
+    TextField h3;
+    public Ventana1( ) throws FileNotFoundException{
         FileInputStream imput= new FileInputStream("dinero (3).png");
         Image image= new Image(imput);
         lb1= new Label("Crow Founding",new ImageView(image));        
@@ -53,11 +47,11 @@ public class ventana implements Vista {
         TableColumn MejorOferta= new TableColumn("Mejor oferta");
         tablas.getColumns().addAll(NombreP, vb,vm ,MejorOferta );
         lb3= new Label("Ingrese Nombre del proyecto");
-        TextField h1= new TextField();
+        h1= new TextField();
         lb4= new Label("Ingrese tiempo de prestamo  ");
-        TextField h2= new TextField();
+        h2= new TextField();
         lb5= new Label("Ingrese interés                        ");
-        TextField h3= new TextField();
+        h3= new TextField();
         
         Button b1= new Button("Aportar", new ImageView(imagen));
         VBox vb2= new VBox();
@@ -99,6 +93,32 @@ public class ventana implements Vista {
     public void setEscena(Scene escena) {
         this.escena = escena;
     }
+
+    public TextField getH1() {
+        return h1;
+    }
+
+    public void setH1(TextField h1) {
+        this.h1 = h1;
+    }
+
+    public TextField getH2() {
+        return h2;
+    }
+
+    public void setH2(TextField h2) {
+        this.h2 = h2;
+    }
+
+    public TextField getH3() {
+        return h3;
+    }
+
+    public void setH3(TextField h3) {
+        this.h3 = h3;
+    }
+    
     
 
+    
 }

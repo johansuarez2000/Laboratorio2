@@ -2,6 +2,7 @@ package Vista;
 
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -32,29 +33,36 @@ import javafx.stage.Stage;
  */
 public class Registro implements Vista {
     private Scene escena;
-    
-    public Registro() throws Exception {
+    TextField h1;
+    TextField h2;
+    TextField h3;
+    PasswordField contraseña;
+    PasswordField contraseña1;
+    TextField h4;
+    Button b1;
+    TextField h6;
+    TextField h7;
+    public Registro() throws FileNotFoundException {
       Label lb1= new Label("Nombre                      ");
-      TextField h1= new TextField();
+      h1= new TextField();
       Label lb2= new Label("Id                                ");
-      TextField h2= new TextField();
+      h2= new TextField();
       Label lb3= new Label("Usuario                       ");
-      TextField h3= new TextField();
+      h3= new TextField();
       Label lb4= new Label("Contraseña                 ");
-      PasswordField contraseña= new PasswordField();
+      contraseña= new PasswordField();
       Label lb5= new Label("Confirmar Contraseña");
-      PasswordField contraseña1= new PasswordField();
+      contraseña1= new PasswordField();
       Label lb6= new Label("Capital                        ");
-      TextField h4= new TextField();
-      Label lb7= new Label("Contraseña de acceso");
-      TextField h5= new TextField();
-      Button b1= new Button("Siguiente");
+      h4= new TextField();
+      
+      b1= new Button("Guardar y volver a la parte de ingreso");
       Label lb8= new Label("Rol                              ");
-      TextField h6= new TextField();
+      h6= new TextField();
       FileInputStream dinero= new FileInputStream("ahorrar-dinero (1).png");
       Image imagen= new Image(dinero);
       Label lb9= new Label("Si su rol es Aportante escriba su capital total",new ImageView(imagen));
-      TextField h7= new TextField();
+      h7= new TextField();
       HBox hb1 = new HBox();
       HBox hb2 = new HBox();
       HBox hb3 = new HBox();
@@ -101,6 +109,78 @@ public class Registro implements Vista {
     @Override
     public Scene getScene() {
       return escena;
+    }
+
+    public TextField getH1() {
+        return h1;
+    }
+
+    public void setH1(TextField h1) {
+        this.h1 = h1;
+    }
+
+    public TextField getH2() {
+        return h2;
+    }
+
+    public void setH2(TextField h2) {
+        this.h2 = h2;
+    }
+
+    public TextField getH3() {
+        return h3;
+    }
+
+    public void setH3(TextField h3) {
+        this.h3 = h3;
+    }
+
+    public PasswordField getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(PasswordField contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    public PasswordField getContraseña1() {
+        return contraseña1;
+    }
+
+    public void setContraseña1(PasswordField contraseña1) {
+        this.contraseña1 = contraseña1;
+    }
+
+    public TextField getH4() {
+        return h4;
+    }
+
+    public void setH4(TextField h4) {
+        this.h4 = h4;
+    }
+
+    public Button getB1() {
+        return b1;
+    }
+
+    public void setB1(Button b1) {
+        this.b1 = b1;
+    }
+
+    public TextField getH6() {
+        return h6;
+    }
+
+    public void setH6(TextField h6) {
+        this.h6 = h6;
+    }
+
+    public TextField getH7() {
+        return h7;
+    }
+
+    public void setH7(TextField h7) {
+        this.h7 = h7;
     }
    
     
